@@ -1,1 +1,3 @@
 Test: Put ideas here
+
+We could try to get purchasing data from the Seattle library, to try to predict when they need to purchase more books.
