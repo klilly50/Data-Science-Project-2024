@@ -75,3 +75,14 @@ From Table 2, we can see that STL forecasting performed the best for Ebooks and 
 ![TimePreds](images/Time_Preds.png)
 *Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
 
+## Repository Navigation
+The [data](data) directory contains the cleaned datasets used for training the models. 
+The [data_cleaning](data_cleaning) directory contains the Python notebooks used to clean the original Checkouts By Title dataset. In the FirstYearCheckouts subdirectory, the Clean_Full_Dataset notebook cleans the full Checkouts by Title dataset by dropping unused columns, dropping NA values, and cleaning the Title and Creator columns. The Aggregating_FirstYearCheckouts file then takes this dataset (cleaned_months_no_whitespace_2005.csv) and creates the author popularity metrics mentioned above as well as cleaning the material type, subject/genre, and publisher columns; this file also creates the train/test split for the resulting dataset.
+The [data_visualization](data_visualization) directory contains the Python notebooks used to visualize and explore the datasets. 
+The [modeling](modeling) directory contains the Python notebooks used to perform the modeling on the datasets. In the FirstYearCheckouts subdirectory, LinearRegressionTests file performs linear regression on the individual features and the InitialModeling file contains the different models tried on the training dataset as well as the final model used on the testing dataset with results. In the TimeSeries subdirectory, the timeseriesexploration file contains the initial baseline and AutoArima modeling in its various forms, whereas the TimeSeriesSTLForecasting contains the initial seasonal baseline and STL modeling. The TimeSeriesForecasting notebook combines the two notebooks, identifies the best model for each material type, and runs the models on the testing dataset. In summary, the InitialModeling and TimeSeriesForecasting notebook files contain the finalized modeling for each project. 
+
+Note that each of the directory above contain two subdirectories, one for the First Year Checkouts project and one for the Time Series project. 
+
+The Seattle Library Checkouts by Title dataset is pubically available [here](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/data) for download. As of September 2024, this file had data up through August 2024 and was 10.35 GB; it is not included in the repository due to its size. 
+
+
