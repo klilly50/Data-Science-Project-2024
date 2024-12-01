@@ -1,5 +1,8 @@
 # Seattle Library Checkouts
 
+Deep Learning Project for the Erdős Institute, Fall 2024.
+James Cameron | Pradyut Karmakar | Kaitlynn Lilly | Danielle Reagan | Josey Wright
+
 ## Introduction
 This project aims to develop predictive insights into library book checkouts using machine learning and time series analysis. Leveraging the ``Checkouts by Title" dataset provided by the Seattle Public Library, our analysis addresses two main questions: (1) can we predict the number of checkouts in the first year for a new book based on a number of features, and (2) can we forecast future checkouts over several months by analyzing past checkout patterns?
 
