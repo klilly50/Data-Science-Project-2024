@@ -1,6 +1,7 @@
 # Seattle Library Checkouts
 
 Deep Learning Project for the Erdős Institute, Fall 2024.
+
 James Cameron | Pradyut Karmakar | Kaitlynn Lilly | Danielle Reagan | Josey Wright
 
 ## Introduction
