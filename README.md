@@ -27,7 +27,7 @@ An initial visualization of this data is shown in Figure 2 reveals distinct patt
 
 Our ACF and PACF analysis of the time series data indicated nonstationarity in all materials as well as a seasonal pattern, where checkouts are correlated with data from approximately a year prior. This repeating cycle suggests that library checkouts follow predictable annual trends. This autocorrelation at yearly intervals informs our forecasting approach, as it highlights the importance of past seasonal patterns in predicting future checkout behavior for various material types.
 
-![TimeTrend](images/TimeTrend.png)
+![TimeTrend](images/Time_Trends.png)
 
 *Figure 2: Plot of the total number of checkouts at the Seattle Public Library over time. Note that the colors of each line indicate the material type of books. Also note the effects of the COVID-19 pandemic from 2019-2021. * 
 
@@ -48,7 +48,7 @@ We then compared our results obtained by removing the trend ourselves to those o
 
 ## Results
 
-![TimePreds](images/TimePreds.png)
+![TimePreds](images/Time_Preds.png)
 
 *Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
 
