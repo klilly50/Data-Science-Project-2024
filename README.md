@@ -50,11 +50,24 @@ We then compared our results obtained by removing the trend ourselves to those o
 ### First Year Checkouts
 The iterative modeling approach described above allowed us to evaluate the effectiveness of each model to outperform the baseline and refine our predictive techniques. The root-mean-square error (RMSE) on the training set for each of the models is included in Table 1. We can see that XGBoost performs the best of all the models tested. For this reason, we chose to test XGBoost on the test set.
 
-
+![FYCTrainTable](images/FYCTrainTable.png)
+*Table 1: Root-mean-square error for several different regression models on the training data.* 
 
 When evaluated on the test set, we found that the baseline model had a RMSE of 119.1516, while XGBoost had a RMSE of 115.6487. The marginal performance boost of our machine learning model on the data would likely not be worth the added complication for libraries and bookstores to predict the popularity of a book in the first year of release. 
 
-![TimePreds](images/Time_Preds.png)
+### Time Series Data
+While we did not have success with predicting the number of checkouts in the first year a book is released, we had more success predicting the total number of checkouts in future years. The relative error for each of the models described above is shown in Table 2. Note that we evaluated each of these models on each material type. This is because each material type displayed vastly different trends as can be seen in Figure 2. 
 
+![TSTrainResults](images/TSTrainResults.png)
+*Table 2: Relative error for several different time series models on the training data for each material type.*
+
+
+From Table 2, we can see that STL forecasting performed the best for Ebooks and audiobooks, AutoARIMA performed the best for sounddiscs, videodiscs, and other, and seasonal AutoARIMA performed the best on books. We then used each of these respective models on the test set for the appropriate material types. However, it is important to note that every time we run these models on the training set, the results vary slightly as to which model performs the best. The results presented here are merely one run. The results from this run on the test set are shown in Table 3. We can see that our models far outperform the baseline. This can further be seen by Figure 3, which is a plot of the predictions and the true number of checkouts for one year out in the future. From Figure 3, we can see that our model predicts the total number of checkouts per month extremely well. 
+
+![TSTestResults.png](images/TSTestResults.png)
+*Table 3: Relative error for the optimal respective time series models on the test data for each material type.*
+
+
+![TimePreds](images/Time_Preds.png)
 *Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
 
