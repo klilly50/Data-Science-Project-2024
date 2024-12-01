@@ -16,7 +16,7 @@ To enhance our predictive capabilities, we created an additional feature to quan
 
 Our exploratory data analysis highlighted minimal overarching trends across the chosen features, underscoring the complexity and diversity in library checkouts. We anticipated that author popularity, as measured by the total checkouts of an author’s previous works, would be a strong predictor of a new book's first-year checkouts. However, our analysis revealed no significant correlation between these variables, challenging our initial expectations. Figure \textcolor{blue}{reference figure here} illustrates this lack of relationship, showing scattered data points with no clear trend, suggesting that factors beyond an author’s past popularity may play a larger role in predicting initial demand for new titles.
 
-![alt text](https://github.com/klilly50/Data-Science-Project-2024/images/NoCorrelation.png)
+![Log scale plot of total checkouts in the first year of release for books at the Seattle Public Library versus number of checkouts by the author of the book in the previous year. Note that the color of each point corresponds to the material type of the book. It is clear that there is no correlation here for any material type](images/NoCorrelation.png)
 
 ### Time Series Data
 For our time series analysis, we aggregated the total number of checkouts per month across the entire dataset. To gain deeper insights, we also categorized this data by material type, allowing us to observe monthly trends within specific categories.
