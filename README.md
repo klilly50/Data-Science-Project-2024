@@ -12,9 +12,9 @@ Working with such a large dataset that included over 45 million entries introduc
 
 From the "Checkouts by Title" data set, we opted to keep the following key features to examine, focusing on fields essential to our questions about checkout patterns: Usage class (Physical vs. Digital), Material Type (Book, Sound disc, Audiobook, Ebook, Video disc, Other), Checkout year, Checkout month, Checkouts, Title, Creator, Subjects, and Publisher. Author names and book titles were standardized for consistency, and we categorized books by genre using text analysis on the subjects provided. To establish the number of checkouts in a book's first year, we segmented the data by checkout dates, noting that later records exhibited inconsistencies. Initial visualizations revealed unreliability in these periods, leading us to exclude data from certain time ranges.
 
-To enhance our predictive capabilities, we created an additional feature to quantify author popularity. For each book, we calculated the total number of checkouts for the author’s other works in the years preceding the book’s release. This feature provides a measure of prior popularity, helping us assess whether an author’s established readership correlates with the initial demand for new titles. By incorporating this popularity metric, we aim to improve the accuracy of our first-year checkout predictions.
+To enhance our predictive capabilities, we created an additional feature to quantify author popularity. For each book, we calculated the total number of checkouts and mean number of checkouts for the author’s other works in the year preceding the book’s release. These features provide a measure of prior popularity, helping us assess whether an author’s established readership correlates with the initial demand for new titles. By incorporating these popularity metrics, we aim to improve the accuracy of our first-year checkout predictions.
 
-Our exploratory data analysis highlighted minimal overarching trends across the chosen features, underscoring the complexity and diversity in library checkouts. We anticipated that author popularity, as measured by the total checkouts of an author’s previous works, would be a strong predictor of a new book's first-year checkouts. However, our analysis revealed no significant correlation between these variables, challenging our initial expectations. Figure 1 illustrates this lack of relationship, showing scattered data points with no clear trend, suggesting that factors beyond an author’s past popularity may play a larger role in predicting initial demand for new titles.
+Our exploratory data analysis highlighted minimal overarching trends across the chosen features, underscoring the complexity and diversity in library checkouts. We anticipated that author popularity, as measured by the total and mean checkouts of an author’s previous works, would be a strong predictor of a new book's first-year checkouts. However, our analysis revealed no significant correlation between these variables, challenging our initial expectations. Figure\ref{fig:NoCorrelation} illustrates this lack of relationship, showing scattered data points with no clear trend, suggesting that factors beyond an author’s past popularity may play a larger role in predicting initial demand for new titles.
 
 ![NoCorrelation](images/NoCorrelation.png)
 
@@ -23,16 +23,21 @@ Our exploratory data analysis highlighted minimal overarching trends across the 
 ### Time Series Data
 For our time series analysis, we aggregated the total number of checkouts per month across the entire dataset. To gain deeper insights, we also categorized this data by material type, allowing us to observe monthly trends within specific categories.
 
-An initial visualization of this data is shown in Figure \textcolor{blue}{reference figure here} reveals distinct patterns in checkout trends over time for each material type. Notably, a sharp decline is visible during the early months of the COVID-19 pandemic, reflecting reduced access to physical library resources. In contrast, digital materials saw less of an impact during this period, illustrating a shift in user behavior when physical access was limited. In fact, digital media such as Ebooks appear to exponentially grow over time, suggesting the rise in digital media post pandemic. This trend provides valuable context for our forecasting models, as it highlights both long-term patterns and temporary disruptions that influence overall checkout behaviors.
+An initial visualization of this data is shown in Figure 2 reveals distinct patterns in checkout trends over time for each material type. Notably, a sharp decline is visible during the early months of the COVID-19 pandemic, reflecting reduced access to physical library resources. In contrast, digital materials saw less of an impact during this period, illustrating a shift in user behavior when physical access was limited. In fact, digital media such as Ebooks appear to exponentially grow over time, suggesting the rise in digital media post pandemic. This trend provides valuable context for our forecasting models, as it highlights both long-term patterns and temporary disruptions that influence overall checkout behaviors.
 
-Our ACF and PACF analysis of the time series data indicated a seasonal pattern, where checkouts are highly correlated with data from approximately a year prior. This repeating cycle suggests that library checkouts follow predictable annual trends. This strong autocorrelation at yearly intervals informs our forecasting approach, as it highlights the importance of past seasonal patterns in predicting future checkout behavior for various material types. \textcolor{red}{Should probably discuss negative correlation with data at 13 months??}
+Our ACF and PACF analysis of the time series data indicated nonstationarity in all materials as well as a seasonal pattern, where checkouts are correlated with data from approximately a year prior. This repeating cycle suggests that library checkouts follow predictable annual trends. This autocorrelation at yearly intervals informs our forecasting approach, as it highlights the importance of past seasonal patterns in predicting future checkout behavior for various material types.
+
+![TimeTrend](images/TimeTrend.png)
+
+*Figure 2: Plot of the total number of checkouts at the Seattle Public Library over time. Note that the colors of each line indicate the material type of books. Also note the effects of the COVID-19 pandemic from 2019-2021. * 
+
 
 ## Modeling Approach
 
 ### First Year Checkouts
 Our baseline model, used to establish a reference point for prediction accuracy, was chosen to be the average number of checkouts in the first year for all books in the training set. This value turned out to be approximately 116 checkouts and was used as the predicted number of first year checkouts, regardless of book. Such a choice of baseline provides a straightforward metric for comparison.
 
-To improve upon this baseline, we applied a variety of linear regression models to capture relationships between the features and target variable. We experimented with multiple regression techniques, including ordinary least squares, ridge, and lasso regression, each selected to test different ways of handling feature relationships and regularization. We also explored several other models, including random forest, \textcolor{red}{include other models Danielle tried}, which provided further insights into model performance and refinement.
+To improve upon this baseline, we applied a variety of regression models to capture relationships between the features and target variable. We experimented with multiple regression techniques, including linear regression with and without lasso regularization, random forest (RF), extra trees, k-nearest neighbors (KNN), XGBoost, and a simple neural network. Each model was selected to test different ways of handling feature relationships and regularization, providing further insights into model performance and refinement.
 
 ### Time Series Data
 We used a linear regression model as a baseline to establish an initial predictive framework for the time series. This baseline provides a simple trend line to gauge the general direction of monthly checkouts over time, helping us identify if more complex models can yield improvements.
@@ -43,5 +48,7 @@ We then compared our results obtained by removing the trend ourselves to those o
 
 ## Results
 
-TBD
+![TimePreds](images/TimePreds.png)
+
+*Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
 
