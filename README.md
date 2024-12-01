@@ -71,6 +71,7 @@ From Table 2, we can see that STL forecasting performed the best for Ebooks and 
 ![TSTestResults.png](images/TSTestResults.png)
 *Table 3: Relative error for the optimal respective time series models on the test data for each material type.*
 
+![TimePreds](images/TimePreds.png)
 
 ![TimePreds](images/Time_Preds.png)
 *Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
