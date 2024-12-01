@@ -16,7 +16,7 @@ To enhance our predictive capabilities, we created an additional feature to quan
 
 Our exploratory data analysis highlighted minimal overarching trends across the chosen features, underscoring the complexity and diversity in library checkouts. We anticipated that author popularity, as measured by the total and mean checkouts of an author’s previous works, would be a strong predictor of a new book's first-year checkouts. However, our analysis revealed no significant correlation between these variables, challenging our initial expectations. Figure\ref{fig:NoCorrelation} illustrates this lack of relationship, showing scattered data points with no clear trend, suggesting that factors beyond an author’s past popularity may play a larger role in predicting initial demand for new titles.
 
-![NoCorrelation](images/NoCorrelation.png)
+![NoCorrelation](images/NoLogCorrelations.png)
 
 *Figure 1: Log scale plot of total checkouts in the first year of release for books at the Seattle Public Library versus number of checkouts by the author of the book in the previous year. Note that the color of each point corresponds to the material type of the book. It is clear that there is no correlation here for any material type.*
 
