@@ -29,7 +29,7 @@ Our ACF and PACF analysis of the time series data indicated nonstationarity in a
 
 ![TimeTrend](images/Time_Trends.png)
 
-*Figure 2: Plot of the total number of checkouts at the Seattle Public Library over time. Note that the colors of each line indicate the material type of books. Also note the effects of the COVID-19 pandemic from 2019-2021. * 
+*Figure 2: Plot of the total number of checkouts at the Seattle Public Library over time. Note that the colors of each line indicate the material type of books. Also note the effects of the COVID-19 pandemic from 2019-2021.* 
 
 
 ## Modeling Approach
