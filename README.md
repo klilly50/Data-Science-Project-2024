@@ -71,8 +71,6 @@ From Table 2, we can see that STL forecasting performed the best for Ebooks and 
 ![TSTestResults.png](images/TSTestResults.png)
 *Table 3: Relative error for the optimal respective time series models on the test data for each material type.*
 
-![TimePreds](images/TimePreds.png)
-
 ![TimePreds](images/Time_Preds.png)
 *Figure 3: Plot of model predictions for total number of checkouts per month versus true values over one year.*
 
@@ -83,10 +81,10 @@ The [data_cleaning](data_cleaning) directory contains the Python notebooks used 
 
 The [data_visualization](data_visualization) directory contains the Python notebooks used to visualize and explore the datasets. 
 
-The [modeling](modeling) directory contains the Python notebooks used to perform the modeling on the datasets. The main modeling files are the InitialModeling notebook in the FirstYearCheckouts subdirectory and the TimeSeriesForecasting notebook in the TimeSeries subdirectory.
+The [modeling](modeling) directory contains the Python notebooks used to perform the modeling on the datasets. The main modeling files are the [FirstYearCheckoutsModeling](modeling/FirstYearCheckouts/FirstYearCheckoutsModeling.ipynb) notebook in the FirstYearCheckouts subdirectory and the [TimeSeriesForecasting](modeling/TimeSeries/TimeSeriesForecasting.ipynb) notebook in the TimeSeries subdirectory.
 
 Note that each of the directory above contain two subdirectories, one for the First Year Checkouts project and one for the Time Series project. 
 
-The Seattle Library Checkouts by Title dataset is pubically available [here](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/data) for download. As of September 2024, this file had data up through August 2024 and was 10.35 GB; it is not included in the repository due to its size. 
+The Seattle Library Checkouts by Title dataset is pubically available [here](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) for download. As of September 2024, this file had data up through August 2024 and was 10.35 GB; it is not included in the repository due to its size. 
 
 
