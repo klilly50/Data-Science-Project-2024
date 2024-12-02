@@ -85,6 +85,6 @@ The [modeling](modeling) directory contains the Python notebooks used to perform
 
 Note that each of the directory above contain two subdirectories, one for the First Year Checkouts project and one for the Time Series project. 
 
-The Seattle Library Checkouts by Title dataset is pubically available [here](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/data) for download. As of September 2024, this file had data up through August 2024 and was 10.35 GB; it is not included in the repository due to its size. 
+The Seattle Library Checkouts by Title dataset is pubically available [here](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) for download. As of September 2024, this file had data up through August 2024 and was 10.35 GB; it is not included in the repository due to its size. 
 
 
